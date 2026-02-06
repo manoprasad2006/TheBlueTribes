@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Kurumba Tribe - A living legacy of art, nature, and ancestral wisdom.">
+    <title>The Kurumba Tribe | Indigenous Art & Culture</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* 
+         * The Kurumba Tribe Website - Styles
+         * A modern, minimal, and authentic representation.
+         */
+
+        :root {
+            /* Color Palette - Earthy & Natural */
+            --color-forest-green: #2C3E2D;
+            /* Deep forest green */
+            --color-mud-brown: #5D4037;
+            /* Rich earth/mud */
+            --color-clay: #8D6E63;
+            /* Lighter earth tone */
+            --color-charcoal: #1A1A1A;
+            /* Soft black for text */
+            --color-off-white: #F5F1E8;
+            /* Warm paper/canvas white */
+            --color-sand: #E0D8C8;
+            /* Subtle background accent */
+
+            /* Typography */
+            --font-serif: 'Playfair Display', serif;
+            /* Elegant, traditional feel */
+            --font-sans: 'Inter', sans-serif;
+            /* Clean, modern readability */
+
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 8rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-off-white);
+            color: var(--color-charcoal);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            color: var(--color-forest-green);
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: 4px;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Section 1: Hero --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-color: var(--color-forest-green);
+            /* Fallback */
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            /* Dim the video slightly */
+        }
+
+        /* Fallback/Placeholder if video/image missing */
+        .hero-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(44, 62, 45, 0.7), rgba(44, 62, 45, 0.7)),
+                url('assets/hero-bg.jpg') center/cover no-repeat;
+            /* If image fails, gradient remains */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--color-off-white);
+            padding: var(--spacing-md);
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--color-off-white);
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            font-weight: 300;
+            opacity: 0.9;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* --- Section 2: About Tribe --- */
+        .section {
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-mud-brown);
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-charcoal);
+        }
+
+        .about-image {
+            background-color: var(--color-sand);
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- Section 3: Art & Culture --- */
+        .culture {
+            background-color: var(--color-sand);
+        }
+
+        .culture-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .culture-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-mud-brown);
+        }
+
+        .culture-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+
+        @media (min-width: 768px) {
+            .culture-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background-color: var(--color-off-white);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-img-placeholder {
+            height: 200px;
+            background-color: var(--color-clay);
+            margin-bottom: var(--spacing-md);
+            border-radius: 4px;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-off-white);
+            font-family: var(--font-serif);
+        }
+
+        .card-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-forest-green);
+        }
+
+        /* --- Section 4: About Artist --- */
+        .artist {
+            background-color: var(--color-white);
+            text-align: center;
+        }
+
+        .artist-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .artist h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-mud-brown);
+        }
+
+        /* --- Artist Video Styles --- */
+        .artist-video-container {
+            max-width: 900px;
+            margin: var(--spacing-lg) auto 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            background-color: var(--color-charcoal);
+        }
+
+        .artist-video-container iframe {
+            aspect-ratio: 16 / 9;
+            height: auto;
+            min-height: 300px;
+        }
+
+        .artist-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .artist-video:focus {
+            outline: 2px solid var(--color-forest-green);
+            outline-offset: 4px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .artist-video-container {
+                margin: var(--spacing-md) auto 0;
+            }
+        }
+
+        /* --- Section 5: Contributors --- */
+        .contributors {
+            background-color: var(--color-forest-green);
+            color: var(--color-off-white);
+            text-align: center;
+        }
+
+        .contributors h2 {
+            color: var(--color-off-white);
+            margin-bottom: var(--spacing-lg);
+            font-size: 2.5rem;
+        }
+
+        /* --- Marquee Animation --- */
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: var(--spacing-md) 0;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: var(--spacing-md);
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+
+        @media (hover: hover) {
+            .marquee-content:hover {
+                animation-play-state: paused;
+            }
+        }
+
+        .marquee-content {
+            will-change: transform;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+
+            /* Assumes content is duplicated once */
+        }
+
+        /* Artist Cards in Marquee */
+        .artist-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: var(--spacing-md);
+            width: 300px;
+            /* Fixed width for consistency */
+            flex-shrink: 0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .artist-card .name {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--color-sand);
+            margin-bottom: 0.5rem;
+        }
+
+        .artist-card .bio {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            color: var(--color-off-white);
+            opacity: 0.8;
+            margin-bottom: var(--spacing-md);
+            flex-grow: 1;
+        }
+
+        .artist-contact {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--spacing-sm);
+            margin-top: auto;
+        }
+
+        .artist-contact .phone {
+            font-size: 0.9rem;
+            color: var(--color-clay);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .artist-contact .socials {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .artist-contact .socials a {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-sand);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .artist-contact .socials a:hover {
+            background-color: var(--color-sand);
+            color: var(--color-forest-green);
+            opacity: 1;
+        }
+
+        /* --- Section 6: Contact --- */
+        .contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: var(--spacing-md);
+            font-size: 1.2rem;
+        }
+
+        .contact-item {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-mud-brown);
+        }
+
+        .social-links {
+            margin-top: var(--spacing-md);
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+        }
+
+        .social-icon {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            color: var(--color-forest-green);
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+        }
+
+        .social-icon:hover {
+            border-bottom-color: var(--color-forest-green);
+            opacity: 0.8;
+        }
+
+        /* --- Premium Navigation --- */
+        .premium-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            z-index: 100;
+            color: var(--color-off-white);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex: 1;
+        }
+
+        .nav-right {
+            justify-content: flex-end;
+        }
+
+        .nav-center {
+            flex: 2;
+            text-align: center;
+        }
+
+        .logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .hamburger-menu {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 5px;
+        }
+
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--color-off-white);
+        }
+
+        .search-icon,
+        .cart-icon {
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .lang-selector {
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+        }
+
+        /* --- Updated Hero --- */
+        .hero {
+            /* Previous styles retained, adjusted for video */
+            height: 100vh;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 45, 0.3);
+            /* Slight overlay for text readability */
+        }
+
+        .hero-placeholder {
+            /* Keeping fallback styles just in case video fails */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* --- Gallery (Masonry Layout) --- */
+        .gallery-grid {
+            column-count: 1;
+            column-gap: var(--spacing-md);
+        }
+
+        @media (min-width: 600px) {
+            .gallery-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .gallery-grid {
+                column-count: 3;
+            }
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Resource Links --- */
+        .resource-link {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--color-mud-brown);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(93, 64, 55, 0.2);
+            padding-bottom: 5px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .resource-link .arrow {
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .resource-link:hover {
+            color: var(--color-forest-green);
+            border-bottom-color: var(--color-forest-green);
+        }
+
+        .resource-link:hover .arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: var(--spacing-md);
+            text-align: center;
+            background-color: var(--color-charcoal);
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Section 1: Hero -->
+    <header class="hero">
+        <!-- Video/Image Background Placeholder -->
+        <div class="hero-video-container">
+            <div class="hero-placeholder">
+                <video autoplay muted loop playsinline src="assets/loop.mp4"></video>
+            </div>
+        </div>
+
+        <div class="hero-content fade-in">
+            <h1>The Kurumba Tribe</h1>
+            <p>A living legacy of art, nature, and ancestral wisdom</p>
+        </div>
+    </header>
+
+    <!-- Section 2: About the Kurumba Tribe -->
+    <section class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content fade-in">
+                    <h2>Guardians of the Nilgiris</h2>
+                    <p>The Kurumbas are one of the most ancient indigenous tribes of the Nilgiri hills in Southern
+                        India. Traditionally known as food gatherers and hunters, they share a deep, spiritual bond with
+                        the forests they inhabit.</p>
+                    <p>For centuries, the Kurumbas have expressed their worldview through distinctive painting styles,
+                        depicting festivals, honey gathering, and rituals that honor nature's rhythms. However, the
+                        number of traditional artists is decreasing, with fewer members of the younger generation taking
+                        up the mantle. This platform aims to bridge the gap, treating these products not just as
+                        artifacts, but as "Premium Narratives" that support livelihoods.</p>
+                </div>
+                <div class="about-image fade-in">
+                    <!-- Placeholder for Cultural Image -->
+                    <img src="assets/dance.jpeg" alt="Kurumba tribal tools and artifacts" style="object-fit: contain;"
+                        onerror="this.style.display='none'; this.parentElement.style.backgroundColor='#8D6E63'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Art & Culture -->
+    <section class="section culture">
+        <div class="container">
+            <div class="culture-header fade-in">
+                <h2>Art & Cultural Identity</h2>
+                <p>Simple strokes, profound meanings. The Kurumba art style is characterized by geometric figures and
+                    earth-toned palettes, telling stories of a life intertwined with the wild.</p>
+            </div>
+
+            <div class="culture-cards">
+                <div class="card fade-in">
+                    <div class="card-img-placeholder">
+                        <img src="assets/Traditional Paintings.jpg" alt="Traditional Paintings"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <h3>Visual Syntax</h3>
+                    <p>Art that adheres to a strict cultural grammar, distinguishing between 'Open' motifs shared for
+                        storytelling and 'Sacred' symbols reserved exclusively for ritual use.</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-img-placeholder">
+                        <img src="assets/Rituals.webp" alt="Nature & Rituals" onerror="this.style.display='none'">
+                    </div>
+                    <h3>Sacred Groves</h3>
+                    <p>Every artwork uses natural pigments to honor the forest. The creation process itself is a form of
+                        stewardship, aligned with the rhythms of the harvest and the monsoon.</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-img-placeholder">
+                        <img src="assets/Symbolism.jpg" alt="Symbolism" style="object-fit: contain;"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <h3>Living Symbolism</h3>
+                    <p>Geometric simplicity with profound meaning. Vertical lines and circles are not just shapes but a
+                        language of memory, identity, and community unity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: About the Artist -->
+    <section class="section artist">
+        <div class="container">
+            <div class="artist-container fade-in">
+                <h2>The Artist's Legacy</h2>
+                <p>In this digital archive, we honor the individual artists who carry the torch of Kurumba tradition.
+                    Their hands weave the stories of the past into the canvas of the present, ensuring that the wisdom
+                    of the elders is not lost to time.</p>
+                <br>
+                <p><i>"We do not just paint what we see; we paint what we feel, what the forest whispers to us."</i></p>
+            </div>
+
+            <!-- Video Section -->
+            <div class="artist-video-container fade-in">
+                <iframe src="https://drive.google.com/file/d/1T0V4ZK4pwdwi0rE5JRW84-CWbAHuGvWO/preview" width="100%"
+                    height="500" allow="autoplay; fullscreen" allowfullscreen style="border: none;">
+                </iframe>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Section: Explore Us (Gallery) -->
+    <section class="section gallery">
+        <div class="container">
+            <h2 class="fade-in" style="text-align: center; margin-bottom: var(--spacing-lg);">Explore Us</h2>
+            <div class="gallery-grid fade-in">
+                <!-- Programmatically generated list of images based on file list -->
+                <div class="gallery-item"><img src="allassets/download.jpg" alt="Kurumba Life"></div>
+                <div class="gallery-item"><img src="allassets/download (1).jpg" alt="Kurumba Art"></div>
+                <div class="gallery-item"><img src="allassets/download (2).jpg" alt="Tribal Heritage"></div>
+                <div class="gallery-item"><img src="allassets/download (3).jpg" alt="Nilgiri Forest"></div>
+                <div class="gallery-item"><img src="allassets/download (4).jpg" alt="Traditional Craft"></div>
+                <div class="gallery-item"><img src="allassets/download (5).jpg" alt="Community Life"></div>
+                <div class="gallery-item"><img src="allassets/download (6).jpg" alt="Sacred Rituals"></div>
+
+                <div class="gallery-item"><img src="allassets/download (8).jpg" alt="Natural Pigments"></div>
+                <div class="gallery-item"><img src="allassets/download (9).jpg" alt="Forest Wisdom"></div>
+                <div class="gallery-item"><img src="allassets/download (10).jpg" alt="Cultural Legacy"></div>
+                <div class="gallery-item"><img src="allassets/download (11).jpg" alt="Ancient Stories"></div>
+                <div class="gallery-item"><img src="allassets/download (12).jpg" alt="Tribal Tools"></div>
+                <div class="gallery-item"><img src="allassets/download (13).jpg" alt="Harmony with Nature"></div>
+                <div class="gallery-item"><img src="allassets/download (14).jpg" alt="The Kurumba Spirit"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Contributors -->
+    <section class="section contributors">
+        <div class="container">
+            <h2 class="fade-in">Guardians of the Art</h2>
+
+            <div class="marquee-wrapper fade-in">
+                <div class="marquee-content">
+                    <!-- Duplicate content for seamless loop -->
+                    <!-- Batch 1 -->
+                    <div class="artist-card">
+                        <div class="name">R. Krishnan (Kitna)</div>
+                        <div class="bio">Widely credited as the primary pioneer who revived the art in the late 20th
+                            century, transitioning it from ancient rock surfaces to canvas.</div>
+                        <div class="artist-contact">
+                            <div class="phone">📞 +91 98765 00001</div>
+                            <div class="socials">
+                                <a href="#">IG</a> <a href="#">IN</a> <a href="#">YT</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artist-card">
+                        <div class="name">P. Balasubramanian</div>
+                        <div class="bio">A senior artist from Baviyur who has practiced the art for over 24 years,
+                            continuing a lineage of painters.</div>
+                        <div class="artist-contact">
+                            <div class="phone">📞 +91 98765 00002</div>
+                            <div class="socials">
+                                <a href="#">IG</a> <a href="#">IN</a> <a href="#">YT</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artist-card">
+                        <div class="name">Kalpana Balasubramanian</div>
+                        <div class="bio">Noted as the first woman to professionally practice and teach this
+                            traditionally male-dominated art form.</div>
+                        <div class="artist-contact">
+                            <div class="phone">📞 +91 98765 00003</div>
+                            <div class="socials">
+                                <a href="#">IG</a> <a href="#">IN</a> <a href="#">YT</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artist-card">
+                        <div class="name">Bharath</div>
+                        <div class="bio">Brother of Kalpana, he practices and conducts workshops to keep the ancestral
+                            tradition alive.</div>
+                        <div class="artist-contact">
+                            <div class="phone">📞 +91 98765 00004</div>
+                            <div class="socials">
+                                <a href="#">IG</a> <a href="#">IN</a> <a href="#">YT</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artist-card">
+                        <div class="name">Saraswati Kannan</div>
+                        <div class="bio">Recognized in some communities as a practicing woman artist within the tribe.
+                        </div>
+                        <div class="artist-contact">
+                            <div class="phone">📞 +91 98765 00005</div>
+                            <div class="socials">
+                                <a href="#">IG</a> <a href="#">IN</a> <a href="#">YT</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Batch 2 (Duplicate for Loop) -->
+                    <div class="artist-card">
+                        <div class="name">R. Krishnan (Kitna)</div>
+                        <div class="bio">Pioneer who revived the art, transitioning it to canvas. Padma Shri 2026.</div>
+                        <div class="artist-contact">
+                            <div class="phone">📞 +91 98765 00001</div>
+                            <div class="socials">
+                                <a href="#">IG</a> <a href="#">IN</a> <a href="#">YT</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artist-card">
+                        <div class="name">P. Balasubramanian</div>
+                        <div class="bio">Senior artist from Baviyur, practicing for over 24 years.</div>
+                        <div class="artist-contact">
+                            <div class="phone">📞 +91 98765 00002</div>
+                            <div class="socials">
+                                <a href="#">IG</a> <a href="#">IN</a> <a href="#">YT</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artist-card">
+                        <div class="name">Kalpana Balasubramanian</div>
+                        <div class="bio">First woman to professionally practice and teach this art form.</div>
+                        <div class="artist-contact">
+                            <div class="phone">📞 +91 98765 00003</div>
+                            <div class="socials">
+                                <a href="#">IG</a> <a href="#">IN</a> <a href="#">YT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Official Resources -->
+    <section class="section contact" style="background-color: var(--color-sand); padding: var(--spacing-lg) 0;">
+        <div class="container fade-in">
+            <h2
+                style="font-size: 1.8rem; margin-bottom: 2rem; color: var(--color-forest-green); letter-spacing: 0.05em; text-transform: uppercase;">
+                Official Resources</h2>
+
+            <div class="resource-links"
+                style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                <a href="https://tribesindia.com/" target="_blank" class="resource-link">Tribes India - Official
+                    platform showcasing authentic tribal products and craftsmanship nationwide. <span
+                        class="arrow">↗</span></a>
+                <a href="https://trifed.tribal.gov.in/" target="_blank" class="resource-link">TRIFED (Ministry of Tribal
+                    Affairs)-Government body supporting tribal livelihoods through fair trade initiatives. <span
+                        class="arrow">↗</span></a>
+                <a href="https://www.tntribalwelfare.tn.gov.in/" target="_blank" class="resource-link">TN Tribal Welfare
+                    - Government body supporting tribal livelihoods through fair trade initiatives. <span
+                        class="arrow">↗</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 The Kurumba Tribe Project. Preserving indigenous art and stories for future generations.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Intersection Observer for Fade-in animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+
+            console.log('Kurumba Tribe site loaded. Animations initialized.');
+        });
+    </script>
+</body>
+
+</html>
